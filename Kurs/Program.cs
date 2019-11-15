@@ -21,7 +21,7 @@ namespace Kurs
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(container.Resolve<FormMain>());
+            Application.Run(container.Resolve<FormAutorization>());
         }
 
         public static Unity.IUnityContainer BuildUnityContainer()

@@ -74,9 +74,13 @@ namespace Kurs.Forms
                     user.Login = textBoxLogin.Text;
                     user.Password = textBoxPassword.Text;
                     user.UserRole = (int)role;
+                    if (user.Email != null)
+                        SendEmail.SendMessage(user.Email, LetterTemplates.updatePasswordLetter(user.Login));
                 }
                 else _context.Users.Add(new User { UserId = Guid.NewGuid(), Login = textBoxLogin.Text, Password = textBoxPassword.Text, IsActive = false, UserRole = (int)role });
-                _context.SaveChanges();
+
+
+                    _context.SaveChanges();
                 Close();
             }
         }

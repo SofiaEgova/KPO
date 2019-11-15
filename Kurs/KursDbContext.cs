@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,10 @@ namespace Kurs
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Model.Task> Tasks { get; set; }
         public virtual DbSet<UserProject> UserProjects { get; set; }
+
+        public void OnModelCreating(ModuleBuilder modelBuilder)
+        {
+        }
 
         public override int SaveChanges()
         {

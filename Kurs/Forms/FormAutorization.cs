@@ -34,6 +34,20 @@ namespace Kurs
             if (check())
             {
                 // изменить статус на активный и выполнить вход
+                var user = _context.Users.FirstOrDefault(u => u.Login == textBoxLogin.Text && u.Password == textBoxPassword.Text);
+                if (user == null)
+                {
+                    MessageBox.Show("Ошибка! Пользователь не найден");
+                    return;
+                }
+                user.IsActive = true;
+                _context.SaveChanges();
+                this.Hide();
+                var form = Container.Resolve<FormMain>();
+                form.ShowDialog();
+                textBoxLogin.Clear();
+                textBoxPassword.Clear();
+                this.Show();
             }
         }
 

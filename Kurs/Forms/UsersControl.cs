@@ -27,9 +27,9 @@ namespace Kurs.Forms
             List<ColumnConfig> columns = new List<ColumnConfig>
             {
                 new ColumnConfig { Name = "Id", Title = "Id", Width = 100, Visible = false },
-                new ColumnConfig { Name = "Login", Title = "Логин", Width = 200, Visible = true },
-                new ColumnConfig { Name = "Password", Title = "Пароль", Width = 300, Visible = true },
-                new ColumnConfig { Name = "UserRole", Title = "Роль", Width = 300, Visible = true }
+                new ColumnConfig { Name = "Login", Title = "Логин", Width = 250, Visible = true },
+                new ColumnConfig { Name = "Password", Title = "Пароль", Width = 232, Visible = true },
+                new ColumnConfig { Name = "UserRole", Title = "Роль", Width = 232, Visible = true }
 
             };
             dataGridViewUsers.Columns.Clear();
@@ -74,10 +74,8 @@ namespace Kurs.Forms
         private void toolStripButtonAdd_Click(object sender, EventArgs e)
         {
             var form = Container.Resolve<FormUser>();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
+            form.ShowDialog();
                 LoadData();
-            }
         }
 
         private void toolStripButtonUpd_Click(object sender, EventArgs e)
@@ -91,10 +89,8 @@ namespace Kurs.Forms
                         { "id", id }
                     }   
                     .OnType<FormUser>());
-                if (form.ShowDialog() == DialogResult.OK)
-                {
+                form.ShowDialog();
                     LoadData();
-                }
             }
         }
 
@@ -107,6 +103,11 @@ namespace Kurs.Forms
                 if (user == null)
                 {
                     throw new Exception("При загрузке возникла ошибка");
+                }
+                if (user.IsActive == true)
+                {
+                    MessageBox.Show("Данный пользователь в настоящее время активен");
+                    return;
                 }
                 _context.Users.Remove(user);
                 _context.SaveChanges();

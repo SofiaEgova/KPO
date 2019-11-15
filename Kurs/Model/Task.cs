@@ -21,10 +21,10 @@ namespace Kurs.Model
         public Guid UserId { get; set; }
         
         [DataMember]
-        public Guid ProjectId { get; set; }
+        public Guid? ProjectId { get; set; }
         
         [DataMember]
-        public Guid SubtaskId { get; set; }
+        public Guid? SubtaskId { get; set; }
 
         [Required]
         [DataMember]
@@ -32,9 +32,15 @@ namespace Kurs.Model
 
         [DataMember]
         public string Description { get; set; }
-        
+
+        [DataMember]
+        public int Status { get; set; }
+
         [DataMember]
         public byte[] Pdf { get; set; }
+
+        [DataMember]
+        public string PdfTitle { get; set; }
 
         public virtual User User { get; set; }
 

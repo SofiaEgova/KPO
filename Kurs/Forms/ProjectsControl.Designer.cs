@@ -1,6 +1,6 @@
 ﻿namespace Kurs.Forms
 {
-    partial class UsersControl
+    partial class ProjectsControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,15 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectsControl));
+            this.dataGridViewProjects = new System.Windows.Forms.DataGridView();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonUpd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDel = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProjects)).BeginInit();
             this.toolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridViewProjects
+            // 
+            this.dataGridViewProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProjects.Location = new System.Drawing.Point(16, 30);
+            this.dataGridViewProjects.Name = "dataGridViewProjects";
+            this.dataGridViewProjects.RowTemplate.Height = 24;
+            this.dataGridViewProjects.Size = new System.Drawing.Size(1010, 490);
+            this.dataGridViewProjects.TabIndex = 3;
             // 
             // toolStrip
             // 
@@ -48,7 +57,7 @@
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(1050, 27);
-            this.toolStrip.TabIndex = 0;
+            this.toolStrip.TabIndex = 2;
             this.toolStrip.Text = "toolStrip";
             // 
             // toolStripButtonAdd
@@ -80,26 +89,17 @@
             this.toolStripButtonDel.Text = "Удалить";
             this.toolStripButtonDel.Click += new System.EventHandler(this.toolStripButtonDel_Click);
             // 
-            // dataGridViewUsers
-            // 
-            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsers.Location = new System.Drawing.Point(14, 30);
-            this.dataGridViewUsers.Name = "dataGridViewUsers";
-            this.dataGridViewUsers.RowTemplate.Height = 24;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1010, 490);
-            this.dataGridViewUsers.TabIndex = 1;
-            // 
-            // UsersControl
+            // ProjectsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridViewUsers);
+            this.Controls.Add(this.dataGridViewProjects);
             this.Controls.Add(this.toolStrip);
-            this.Name = "UsersControl";
+            this.Name = "ProjectsControl";
             this.Size = new System.Drawing.Size(1050, 540);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProjects)).EndInit();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,10 +107,10 @@
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dataGridViewProjects;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton toolStripButtonAdd;
         private System.Windows.Forms.ToolStripButton toolStripButtonUpd;
         private System.Windows.Forms.ToolStripButton toolStripButtonDel;
-        private System.Windows.Forms.DataGridView dataGridViewUsers;
     }
 }

@@ -40,7 +40,7 @@
             this.buttonSignIn.Location = new System.Drawing.Point(142, 95);
             this.buttonSignIn.Name = "buttonSignIn";
             this.buttonSignIn.Size = new System.Drawing.Size(75, 23);
-            this.buttonSignIn.TabIndex = 0;
+            this.buttonSignIn.TabIndex = 2;
             this.buttonSignIn.Text = "Войти";
             this.buttonSignIn.UseVisualStyleBackColor = true;
             this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
@@ -59,7 +59,7 @@
             this.textBoxLogin.Location = new System.Drawing.Point(117, 12);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(100, 22);
-            this.textBoxLogin.TabIndex = 2;
+            this.textBoxLogin.TabIndex = 0;
             // 
             // label2
             // 
@@ -74,8 +74,9 @@
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(117, 50);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(100, 22);
-            this.textBoxPassword.TabIndex = 4;
+            this.textBoxPassword.TabIndex = 1;
             // 
             // FormAutorization
             // 

@@ -14,6 +14,8 @@ namespace Kurs
 {
     public partial class FormMain : Form
     {
+        // можно сделать выход, и открытие формы авторизации
+
         [Dependency]
         public new IUnityContainer Container { get; set; }
 
@@ -41,12 +43,9 @@ namespace Kurs
                     generateMenuAdmin();
                     break;
                 case 1:
-                    this.Text = "Главная. Преподаватель";
-                    //generateMenuTeacher();
-                    break;
                 case 2:
-                    this.Text = "Главная. Студент";
-                    //generateMenuStudent();
+                    this.Text = "Главная.";
+                    generateMenuTeacher();
                     break;
             }
         }
@@ -58,6 +57,10 @@ namespace Kurs
             ToolStripMenuItem usersItem = new ToolStripMenuItem("Пользователи");
             menuStrip.Items.Add(usersItem);
             usersItem.Click += usersItemToolStripMenuItem_Click;
+
+            ToolStripMenuItem exitItem = new ToolStripMenuItem("Выход");
+            menuStrip.Items.Add(exitItem);
+            exitItem.Click += exitItemToolStripMenuItem_Click;
         }
 
         private void usersItemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,11 +82,15 @@ namespace Kurs
             ToolStripMenuItem projectsItem = new ToolStripMenuItem("Проекты");
             menuStrip.Items.Add(projectsItem);
             projectsItem.Click += projectsItemToolStripMenuItem_Click;
+
+            ToolStripMenuItem exitItem = new ToolStripMenuItem("Выход");
+            menuStrip.Items.Add(exitItem);
+            exitItem.Click += exitItemToolStripMenuItem_Click;
         }
 
         private void userInfoItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var control = Container.Resolve<UserInfoControl>();
+            var control = Container.Resolve<InfoControl>();
             ApplyControl(control);
         }
 
@@ -94,6 +101,11 @@ namespace Kurs
         }
 
         #endregion
+
+        private void exitItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void ApplyControl(Control control)
         {
@@ -114,7 +126,9 @@ namespace Kurs
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // выход пользователя
+            var user = _context.Users.FirstOrDefault(u => u.IsActive == true);
+            user.IsActive = false;
+            _context.SaveChanges();
         }
     }
 }

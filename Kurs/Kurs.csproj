@@ -79,11 +79,36 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProject.Designer.cs">
+      <DependentUpon>FormProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTask.Designer.cs">
+      <DependentUpon>FormTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormUser.Designer.cs">
       <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\InfoControl.Designer.cs">
+      <DependentUpon>InfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LetterTemplates.cs" />
+    <Compile Include="Forms\ProjectsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectsControl.Designer.cs">
+      <DependentUpon>ProjectsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UsersControl.cs">
       <SubType>UserControl</SubType>
@@ -96,6 +121,18 @@
     <Compile Include="Migrations\201910171617042_m.designer.cs">
       <DependentUpon>201910171617042_m.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911071420137_file.cs" />
+    <Compile Include="Migrations\201911071420137_file.designer.cs">
+      <DependentUpon>201911071420137_file.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911071525401_task.cs" />
+    <Compile Include="Migrations\201911071525401_task.designer.cs">
+      <DependentUpon>201911071525401_task.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911071810325_taskstatus.cs" />
+    <Compile Include="Migrations\201911071810325_taskstatus.designer.cs">
+      <DependentUpon>201911071810325_taskstatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\Task.cs" />
@@ -103,6 +140,8 @@
     <Compile Include="Model\UserProject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendEmail.cs" />
+    <Compile Include="TaskStatus.cs" />
     <Compile Include="UserRoles.cs" />
     <EmbeddedResource Include="Forms\FormAutorization.resx">
       <DependentUpon>FormAutorization.cs</DependentUpon>
@@ -110,14 +149,35 @@
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProject.resx">
+      <DependentUpon>FormProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTask.resx">
+      <DependentUpon>FormTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InfoControl.resx">
+      <DependentUpon>InfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectsControl.resx">
+      <DependentUpon>ProjectsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UsersControl.resx">
       <DependentUpon>UsersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910171617042_m.resx">
       <DependentUpon>201910171617042_m.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911071420137_file.resx">
+      <DependentUpon>201911071420137_file.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911071525401_task.resx">
+      <DependentUpon>201911071525401_task.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911071810325_taskstatus.resx">
+      <DependentUpon>201911071810325_taskstatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
